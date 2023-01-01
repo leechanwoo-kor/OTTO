@@ -1,7 +1,9 @@
 https://www.kaggle.com/competitions/otto-recommender-system/overview
 
-## OTTO – Multi-Objective Recommender System
+# OTTO – Multi-Objective Recommender System
 Build a recommender system based on real-world e-commerce sessions
+
+## Overview
 
 ### Description
 
@@ -53,3 +55,23 @@ session_type,labels
 12906578_clicks, 135193 129431 119318 ...
 etc. 
 ```
+
+## Data
+
+The goal of this competition is to predict e-commerce clicks, cart additions, and orders. You'll build a multi-objective recommender system based on previous events in a user session.
+
+The training data contains full e-commerce `session` information. For each `session` in the test data, your task it to predict the `aid` values for each session `type` thats occur after the last timestamp `ts` in the test session. In other words, the test data contains sessions truncated by timestamp, and you are to predict what occurs after the point of truncation.
+
+For additional background, please see the published [OTTO Recommender Systems Dataset](https://github.com/otto-de/recsys-dataset) GitHub.
+
+### Files
+
+- **train.jsonl** - the training data, which contains full session data
+  - `session` - the unique session id
+  - `events` - the time ordered sequence of events in the session
+    - `aid` - the article id (product code) of the associated event
+    - `ts` - the Unix timestamp of the event
+    - `type` - the event type, i.e., whether a product was clicked, added to the user's cart, or ordered during the session
+- **test.jsonl** - the test data, which contains truncated session data
+  - your task is to predict the next `aid` clicked after the session truncation, as well as the the remaining `aid`s that are added to `carts` and `orders`; you may predict up to 20 values for each session `type`
+- **sample_submission.csv** - a sample submission file in the correct format
