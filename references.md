@@ -1,0 +1,3 @@
+- https://www.kaggle.com/code/snnclsr/transformers4rec-synthetic-data-example
+- https://www.kaggle.com/datasets/radek1/otto-full-optimized-memory-footprint
+- https://www.kaggle.com/code/francescoliveras/otto-mors#Imports-%F0%9F%93%A5
