@@ -12,12 +12,12 @@ from tqdm import tqdm
 # data_path = Path('/kaggle/input/otto-recommender-system/')
 
 def jsonl_to_parquet(i_type):
-    data_path = Path('.')
+    data_path = './input/'
     chunksize = 100_000
 
     data_name = i_type + '.jsonl'
 
-    chunks = pd.read_json(data_path / data_name, lines=True, chunksize=chunksize)
+    chunks = pd.read_json(data_path + data_name, lines=True, chunksize=chunksize)
     if os.path.isdir(i_type + '_parquet'):
         os.rmdir(i_type + '_parquet')
         os.mkdir(i_type + '_parquet')
