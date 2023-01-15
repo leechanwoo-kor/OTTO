@@ -1,2 +1,6 @@
+*.csv
 *.jsonl
 *.parquet
+
+*.npy
+*checkpoint.ipynb
